@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Free Book World</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(43deg , #dc2626 0%, #4158D0 46%, #c850C0 100%);
+        }
+
+        .background {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .background-tab {
+            background: rgba(255,255,255,0.15);
+            width: 100%;
+            max-width: 400px;
+            height: 350px;
+            border: 0.15rem solid black;
+            border-radius: 1rem;
+            flex-direction: column;
+        }
+
+        .label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .submit-button {
+            background-color: #ffffff;
+            color: #bd2a61;
+            border: none;
+            width: 100%;
+            max-width: 300px;
+            height: 48px;
+            border-radius: 25px;
+            margin-top: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .submit-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        .submit-button:active {
+            transform: translateY(1px);
+        }
+
+        .input-label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+        }
+
+        .name {
+            width: 100%;
+            max-width: 20rem;
+            height: 3rem;
+            border-radius: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0 20px;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        .name:focus {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+        }
+    </style>
+</head>
+<body>
+<div class="background">
+    <div class="background-tab">
+        <div class="label">
+            <label class="label">Welcome to Free Book World</label>
+        </div>
+
+        <form action="main.html" method="GET">
+
+        <div class="input-label">
+            <label for="name"></label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" class="name" required>
+        </div>
+
+        <div class="label">
+            <button class="submit-button">
+                Go In
+            </button>
+        </div>
+
+        </form>
+        </div>
+    </div>
+
+<script>
+    document.getElementById('name').addEventListener('input', function () {
+        localStorage.setItem('ShardText', this.value);
+    })
+</script>
+</body>
+</html>

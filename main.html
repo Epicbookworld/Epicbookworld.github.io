@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Writer Novel</title>
+    <style>
+        body {
+            background: linear-gradient(43deg , #c850C0 0%, #bd2a61 46%, #ff4d4d 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            color: white;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .username {
+            height: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+        .username2 {
+            color: black;
+            background-color: white;
+            width: 150px;
+            height: 34px;
+            border-radius: 17px;
+            font-style: italic;
+            font-size: 1.24rem;
+            font-weight: 600;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .username2:hover {
+            transform: scale(1.1);
+            box-shadow: 0 2px 4px 2px black;
+            background-color: #d8d3d3;
+        }
+
+
+        .tabs-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
+            box-sizing: border-box;
+        }
+
+        .Novel-Tab {
+            display: flex;
+            flex-direction: column;
+            border: solid black;
+            text-align: center;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 16px;
+            width: 8rem;
+            height: 185px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .Novel-Tab-label {
+            color: black;
+            font-size: 1.4rem;
+            font-weight: 600;
+            font-style: oblique;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            cursor: pointer;
+            padding-top: 2px;
+        }
+        .Novel-Tab-image {
+            width: 100%;
+            height: 160px;
+            cursor: pointer;
+            object-fit: cover;}
+        .Novel-Tab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px 12px gray; }
+        .Novel-Tab:active {
+            background: #474545;}
+
+        .Geography-Tab {
+            display: flex;
+            flex-direction: column;
+            border: solid black;
+            text-align: center;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 16px;
+            width: 8rem;
+            height: 185px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .Geography-Tab-label {
+            color: black;
+            font-size: 1.4rem;
+            font-weight: 600;
+            font-style: oblique;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            cursor: pointer;
+            padding-top: 2px;
+        }
+        .Geography-Tab-image {
+            width: 100%;
+            height: 160px;
+            cursor: pointer;
+            object-fit: cover;}
+        .Geography-Tab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px 12px #b55b1a; }
+        .Geography-Tab:active {
+            background: #474545;}
+
+        .Chemistry-Tab {
+            display: flex;
+            flex-direction: column;
+            border: solid black;
+            text-align: center;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 16px;
+            width: 8rem;
+            height: 185px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .Chemistry-Tab-label {
+            color: black;
+            font-size: 1.4rem;
+            font-weight: 600;
+            font-style: oblique;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            cursor: pointer;
+            padding-top: 2px;
+        }
+        .Chemistry-Tab-image {
+            width: 100%;
+            height: 160px;
+            cursor: pointer;
+            object-fit: cover;}
+        .Chemistry-Tab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px 12px #5f8193;
+        }
+        .Chemistry-Tab:active {
+            background: #474545;}
+
+        .Math-Tab {
+            display: flex;
+            flex-direction: column;
+            border: solid black;
+            text-align: center;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 16px;
+            width: 8rem;
+            height: 185px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .Math-Tab-label {
+            color: black;
+            font-size: 1.4rem;
+            font-weight: 600;
+            font-style: oblique;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            cursor: pointer;
+            padding-top: 2px;
+        }
+        .Math-Tab-image {
+            width: 100%;
+            height: 160px;
+            cursor: pointer;
+            object-fit: cover;}
+        .Math-Tab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px 12px skyblue;
+        }
+        .Math-Tab:active {
+            background: #474545;}
+
+
+    </style>
+</head>
+<body>
+
+<div class="username">
+    <div class="username2" id="name"></div>
+</div>
+
+<div class="tabs-container">
+
+    <div class="Novel-Tab">
+        <a href="Novel-Tab/novel-tab.html" style="text-decoration: none;">
+            <label class="Novel-Tab-label">Novel Tab</label>
+            <img src="images/novel-back.png" alt="The Begin Novel" class="Geography-Tab-image">
+        </a>
+    </div>
+
+    <div class="Geography-Tab">
+        <a href="Geography-Tab/geography-tab.html" style="text-decoration: none;">
+            <label class="Geography-Tab-label">Geography</label>
+            <img src="images/Geography-back.png" alt="Geography Back" class="Novel-Tab-image">
+        </a>
+    </div>
+
+    <div class="Chemistry-Tab">
+        <a href="Chemistry-Tab/chemistry-tab.html" style="text-decoration: none;">
+            <label class="Chemistry-Tab-label">Chemistry</label>
+            <img src="images/chemistry-back.png" alt="chemistry back" class="Chemistry-Tab-image">
+        </a>
+    </div>
+
+    <div class="Math-Tab">
+        <a href="Math-Tab/Math-Tab.html" style="text-decoration: none;">
+            <label class="Math-Tab-label">Math</label>
+            <img src="images/math-back.png" alt="Math Back" class="Math-Tab-image">
+        </a>
+    </div>
+
+</div>
+
+<script>
+    const saveText = localStorage.getItem('ShardText');
+    if (saveText) {
+        document.getElementById('name').innerText = saveText;
+    }
+</script>
+</body>
+</html>
